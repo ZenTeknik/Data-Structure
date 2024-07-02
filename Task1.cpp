@@ -19,4 +19,4 @@ delete intptr;
 delete[] namestr;
 return 0;
 }
-
+.
