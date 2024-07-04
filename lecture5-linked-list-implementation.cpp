@@ -1,79 +1,78 @@
-                        // Linked List implementation 
-#include<iostream>
+     // Linked List implementation 
 
+#include<iostream> 
 using namespace std;
 
-struct  node{
+struct node{
 int info;
 node *next;
 };
 
-class list{
-public:
+
+class list {
+private:
 node *head;
 node *temp,*temp1;
+public:
 
-
-list();
-~list();
+ list();
+ ~list();
 void option();
 void print();
-void search();
 void add();
+void search();
 void remove();
-
+void length();
 };
 
-
-// constructer defination 
 list :: list(){
 head=temp=temp1=NULL;
 }
 
-list :: ~ list(){
+list :: ~list(){
 temp=head;
-while(temp !=NULL){
+while(temp!=NULL){
 temp1=temp;
 temp=temp->next;
 delete temp1;
+}
+}
 
-}
-}
 
 void list :: option(){
 int choice;
 do{
-cout<<"Select any one option ! "<<endl;
-cout<<"1) PRINT   : "<<endl;
-cout<<"2) ADD  : "<<endl;
-cout<<"3) SEARCH    : "<<endl;
-cout<<"4) REMOVE  : "<<endl;
-cout<<"0) EXIT  : "<<endl;
-cout<<"Enter your choice ! "<<endl;
+cout<<"Select Any One :"<<endl;
+cout<<"1) print :"<<endl;
+cout<<"2) add :"<<endl;
+cout<<"3) remove :"<<endl;
+cout<<"4) search :"<<endl;
+cout<<"5) length  :"<<endl;
+cout<<"0) EXIT :"<<endl;
+cout<<"Enter your choice : "<<endl;
 cin>>choice;
 
 if(choice==1){
-         print();
-}
-          
-else if(choice==2){
-       add();
-}
+ print();
+ }
+ else if(choice==2){
+ add();
+ }
+ else if(choice==3){
+ remove();
+ }
 
-else if(choice==3){
-          search();
-}
+ else if(choice==4){
+ search();
+ }
 
-
-else if(choice==4){
-          remove();
-}
-
-else if(choice==0){
-break;
-}
-
-else{
+ else if(choice==5){
+ length();
+ }
+  else if(choice==0){
+ break;
+ }
+else {
 cout<<"Invalid choice : "<<endl;
 }
 
@@ -81,94 +80,106 @@ cout<<"Invalid choice : "<<endl;
 
 }
 
-// function for print all the value 
+
 void list :: print(){
 temp=head;
 if(head==NULL){
-cout<<"No value in this linked list : "<<endl;
+cout<<"No element : "<<endl;
 }
 else{
 while(temp!=NULL){
-cout<<temp->info<<" ";
+cout<<temp->info<<"  ";
 temp=temp->next;
 }
 cout<<endl;
 }
 }
 
-
-
-// function for adding the value 
 void list :: add(){
+temp=head;
 if(head==NULL){
 head=new node;
-cout<<"Enter the element : "<<endl;
+cout<<"Enter the element :"<<endl;
 cin>>head->info;
 head->next=NULL;
 }
-temp=head;
+else{
 int key;
- cout<<"Enter the key :"<<endl;
- cin>>key;
- while(temp!=NULL){
- if(temp->info==key){
-// add code
+head=temp;
+while(temp->next!=NULL){
+temp=temp->next;
+}
 temp1=new node;
-cout<<"Enter the element to add  "<<endl;
+cout<<"Enter the element you want to add : "<<endl;
 cin>>temp1->info;
-temp1->next=temp->next;
+temp1->next=NULL;
 temp->next=temp1;
 }
-else {
-cout<<"Not found : "<<endl;
 }
-temp=temp->next;
-
-  }
- }
 
 
-// function for search the value 
 void list :: search(){
-temp=head;
 int key;
-cout<<"Enter the key :"<<endl;
+temp=head;
+if(head==NULL){
+cout<<"Invalid search No element in the list : "<<endl;
+}
+else{
+cout<<"Enter the element to search : "<<endl;
 cin>>key;
 while(temp!=NULL){
+if(temp->info==key){
+cout<<"Found : "<<endl;
+return;
+}
 
-if(temp->info=key){
-cout<<"Found :"<<endl;
-}
-else {
-cout<<"Not found : "<<endl;
-}
 temp=temp->next;
 }
+cout<<"Not found : "<<endl;
+}
 }
 
 
 
-// function for removing the value 
 void list :: remove(){
 temp=head;
 int key;
-cout<<"Enter the number u wannt to delete : "<<endl;
-cin>>key;
 if(head==NULL){
-cout<<"No element to delete : "<<endl;
+cout<<"No element to remove : "<<endl;
 }
+else{
+cout<<"Enter the element you wannt to remove : "<<endl;
+cin>>key;
+
+if(head->info==key){
+temp1=head;
+head=head->next;
+delete temp1;
+return ;
+}
+
+temp=head;
 while(temp!=NULL){
-if(temp->next->info==key){
-// deletetion code here 
+if(temp->info==key){
 temp1=temp->next;
 temp->next=temp1->next->next;
 delete temp1;
+return;
 }
-
 temp=temp->next;
- }
+}
+}
 }
 
+void list :: length(){
+temp=head;
+int count=0;
+while(temp!=NULL){
+count++;
+temp=temp->next;
+}
+cout<<"Lenght : "<<count<<endl;
+}
 
 
 int main(){
@@ -179,6 +190,3 @@ obj.option();
 
 return 0;
 }
-
-
-
