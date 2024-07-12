@@ -197,7 +197,7 @@ cin>>key;
 if(head->info==key){
 temp1=head;
 head=head->next;
-}
+
 if(head!=NULL){
 head->prev=NULL;
 }
