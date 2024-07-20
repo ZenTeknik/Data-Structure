@@ -117,9 +117,7 @@ return;
 }
 
 
-while(temp->next!=NULL){
-temp=temp->next;
-}
+
 
 char  option;
 int key;
@@ -127,7 +125,7 @@ temp=head;
 cout<<"You wanna add normally(n) or between(b) : exit(e)  "<<endl;
 cin>>option;
 
-if(option=='b' || 'B'){
+if(option=='b' || option=='B'){
 cout<<"Enter the element after u wanna add  : "<<endl;
 cin>>key;
 
@@ -144,15 +142,20 @@ temp=temp->next;
 cout<<"Key  not found : "<<endl;
 }
 
-else if (option=='n' || 'N' ){
+else if (option=='n' || option=='N' ){
+while(temp->next!=NULL){
+temp=temp->next;
+}
 temp1=new box;
 cout<<"Enter the element : "<<endl;
 cin>>temp1->info;
 temp1->next=NULL;
 temp->next=temp1;
+
 }
 
-else if(option=='e' || 'E'){
+
+else if(option=='e' || option=='E'){
 return;
 }
 else {
@@ -163,6 +166,53 @@ return;
 
 
 
+// add function for jsut practice
+/*
+void list :: add(){
+temp=head;
+int key,option;
+if(head==NULL){
+head=new node;
+cout<<"Enter the data in head : "<<endl;
+cin>>head->info;
+head->next=NULL;
+}
+
+cout<<"Where u wannt to add normally(n)  between(b) exit(e) :"<<endl;
+cin>>option;
+
+if(option =='n' || option=='N'){
+temp=head;
+while(temp!=NULL){
+temp=temp->next;
+}
+temp1=new node;
+cout<<"Enter the element : "<<endl;
+cin>>temp1->info;
+temp1->next=NULL;
+temp->next=temp1;
+}
+
+else if(option=='b' || option=='B'){
+cout<<"Enter the elemnt where u wanna add after : "<<endl;
+cin>>key;
+while(temp!=NULL){
+if(temp->info==key){
+temp1=new node;
+cout<<"Enter element : "<<endl;
+cin>>temp1->info;
+temp1->next=temp->next;
+temp->next=temp;
+}
+temp=temp->next;
+}
+cout<<"Invalid Key : "<<endl;
+}
+else {
+cout<<"Invalid choice : "<<endl;
+}
+}
+*/
 
 
 void list :: remove(){
