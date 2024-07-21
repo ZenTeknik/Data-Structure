@@ -28,6 +28,12 @@ void search();
 };
 
 
+list :: list(){
+    head=temp=temp1=min=max=NULL;
+
+}
+
+
 
 int main(){
 
