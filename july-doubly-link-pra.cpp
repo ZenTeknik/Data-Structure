@@ -33,6 +33,29 @@ list :: list(){
 
 }
 
+list :: ~list(){
+    temp=head;
+    while(temp!=NULL){
+        temp1=temp;
+        temp=temp->next;
+        delete temp1;
+    }
+}
+
+
+void list :: option(){
+
+int choice;
+do{
+cout<<"Avalible Option  :"<<endl;
+cout<<"1) print : "<<endl;
+cout<<"2) print : "<<endl;
+
+
+
+}while(choice!=0);
+
+
 
 
 int main(){
