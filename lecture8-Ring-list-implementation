@@ -1,0 +1,31 @@
+// Doubly ring  list implementation   
+// there is no null in this list 
+// last node is connected with head of node like proper ring 
+
+
+
+add(){
+if(head==NULL){
+head=new node;
+cout<<"Enter the element : "<<endl;
+cin>>head->info;
+
+head-prev=head->next=head;
+
+cout<<"Enter the key : "<<endl;
+cin>>key;
+temp=head;
+
+
+while(){
+if(temp->info==key){
+temp1=new node;
+cout<<"Enter the element : "<<endl;
+cin>>temp1->info;
+
+
+
+}
+temp=temp->next;
+} 
+
