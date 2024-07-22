@@ -11,7 +11,7 @@ node *prev;
 class  list{
 private: 
 node *head;
-node *temp,*temp1,*min,*max;
+node *temp,*temp1;
 
 public: 
 list();
@@ -29,7 +29,7 @@ void search();
 
 // constructer 
 list :: list(){
-    head=temp=temp1=min=max=NULL;
+    head=temp=temp=NULL;
 }
 
 
@@ -191,4 +191,69 @@ return;
 
 
 
+// fucntion for adding   element 
+void list :: add(){
+temp=head;
 
+if(head==NULL){
+head=new node;
+cout<<"Enter the element : "<<endl;
+cin>>head->info;
+head->next=NULL;
+head->prev=NULL;
+return;
+}
+
+while(temp->next=NULL){
+temp=temp->next;
+}
+
+temp1=new node;
+cout<<"Enter the element : "<<endl;
+cin>>temp1->info;
+temp1->next=NULL;
+temp->next=temp1;
+temp1->prev=temp;
+}
+
+
+
+// function for removing the element 
+void list :: remove(){
+temp=head;
+
+if(head==NULL){
+cout<<"No element to remove : "<<endl;
+return;
+}
+
+int key;
+cout<<"Enter the key to remove : "<<endl;
+cin>>key;
+
+if(head->info==key){
+temp1=head;
+head=head->next;
+delete temp1;
+return;
+}
+
+
+while(temp!=NULL){
+if(temp->info==key){
+temp1=temp;
+}
+
+if(temp->next!=NULL){
+temp->next->prev=temp->prev;
+}
+
+if(temp->prev!=NULL){
+temp->prev->next=temp->next;
+}
+
+delete temp1;
+temp=temp->next;
+}
+cout<<"Key Not Found : "<<endl;
+}
