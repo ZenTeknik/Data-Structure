@@ -257,3 +257,9 @@ temp=temp->next;
 }
 cout<<"Key Not Found : "<<endl;
 }
+
+
+int main(){
+    list obj;
+    obj.option();
+}
