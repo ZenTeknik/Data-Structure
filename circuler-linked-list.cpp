@@ -12,7 +12,7 @@ private:
 node *head,*temp,*temp1;
 public:
 
-list();
+list();   
 ~list();
 void option();
 void add();
