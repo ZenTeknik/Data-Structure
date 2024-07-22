@@ -184,8 +184,7 @@ max=temp->info;
 }
 temp=temp->next;
 }
-cout<<"Maximum Number : "<<temp->info<<endl;
-return;
+cout<<"Maximum Number : "<<max<<endl;
 }
 
 
@@ -204,7 +203,7 @@ head->prev=NULL;
 return;
 }
 
-while(temp->next=NULL){
+while(temp->next!=NULL){
 temp=temp->next;
 }
 
@@ -219,6 +218,7 @@ temp1->prev=temp;
 
 
 // function for removing the element 
+/*
 void list :: remove(){
 temp=head;
 
@@ -257,6 +257,51 @@ temp=temp->next;
 }
 cout<<"Key Not Found : "<<endl;
 }
+
+*/
+
+
+
+
+
+
+void list :: remove(){
+temp=head;
+
+if(head==NULL){
+cout<<"No Element to remove : "<<endl;
+return;
+}
+
+int key;
+cout<<"Enter the key u wanna remove  : "<<endl;
+cin>>key;
+
+if(head->info==key){
+temp1=head;
+head=head->next;
+delete temp1;
+return;
+}
+
+while(temp!=NULL){
+if(temp->info==key){
+temp1=temp;
+}
+
+if(temp->next!=NULL){
+temp->prev->next=temp->next;
+}
+
+if(temp->prev!=NULL){
+temp->next->prev=temp->prev;
+}
+delete temp1;
+temp=temp->next;
+}
+cout<<"Key Not Found  : "<<endl;
+}
+
 
 
 int main(){
