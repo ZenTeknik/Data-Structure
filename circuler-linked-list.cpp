@@ -95,7 +95,48 @@ cout<<endl;
 }
 
 
+// function for finding length 
+void list :: length(){
+temp=head;
+int count=0;
+while(temp->next!=head){
+count++;
+temp=temp->next;
+}
+cout<<"Length : "<<count<<endl;
+}
 
+
+// function for search element 
+void list :: search(){
+temp=head;
+
+if(head==NULL){
+cout<<"No Element to Search : "<<endl;
+return;
+}
+
+
+int key;
+cout<<"Enter the key to search : "<<endl;
+cin>>key;
+
+while(temp->next!=head){
+if(temp->info==key){
+cout<<"Key Found : "<<temp->info<<endl;
+return;
+}
+temp=temp->next;
+}
+cout<<"Key Not Found : "<<endl;
+}
+
+
+
+
+
+// function for adding values 
+void list :: 
 
 
 
