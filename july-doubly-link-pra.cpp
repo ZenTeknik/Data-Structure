@@ -61,25 +61,25 @@ cout<<"Enter your choice : "<<endl;
 cin>>choice;
 
 if(choice==1){
-
+print();
 }
 else if(choice==2){
-
+add();
 }
 else if(choice==3){
-    
+   remove(); 
 }
 else if(choice==4){
-    
+    search();
 }
 else if(choice==5){
-    
+    mini();
 }
 else if(choice==6){
-    
+    maxi();
 }
 else if(choice==7){
-    
+    length();
 }
 else if(choice==0){
  break;   
