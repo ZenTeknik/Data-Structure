@@ -27,6 +27,8 @@ list :: list(){
 head=temp=temp1=NULL;
 }
 
+
+
 // destructer 
 list :: ~list(){
 temp=head;
@@ -38,7 +40,7 @@ temp1=temp;
 temp=temp->next;
 delete temp1;
 }
-while (temp != head);
+delete temp;
     head = NULL;
 }
 
@@ -92,7 +94,7 @@ cout<<"No Element to Print : "<<endl;
 return;
 }
 
-while(temp!=head){
+while(temp->next!=head){
 cout<<temp->info<<" ";
 temp=temp->next;
 }
@@ -104,7 +106,7 @@ cout<<endl;
 void list :: length(){
 temp=head;
 int count=0;
-while(temp!=head){
+while(temp->next!=head){
 count++;
 temp=temp->next;
 }
@@ -126,7 +128,7 @@ int key;
 cout<<"Enter the key to search : "<<endl;
 cin>>key;
 
-while(temp!=head){
+while(temp->next!=head){
 if(temp->info==key){
 cout<<"Key Found : "<<temp->info<<endl;
 return;
@@ -152,14 +154,14 @@ head->next=head;
 return;
 }
 
-while(temp!=head){
+while(temp->next!=head){
 temp=temp->next;
 }
 
 temp1=new node;
 cout<<"Enter the value :"<<endl;
 cin>>temp1->info;
-temp1=head->next;
+temp1->next=head;
 temp->next=temp1;
 }
 
