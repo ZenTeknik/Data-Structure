@@ -87,7 +87,7 @@ cout<<"No Element to Print : "<<endl;
 return;
 }
 
-while(temp->next!=head){
+while(temp!=head){
 cout<<temp->info<<" ";
 temp=temp->next;
 }
@@ -99,7 +99,7 @@ cout<<endl;
 void list :: length(){
 temp=head;
 int count=0;
-while(temp->next!=head){
+while(temp!=head){
 count++;
 temp=temp->next;
 }
@@ -121,7 +121,7 @@ int key;
 cout<<"Enter the key to search : "<<endl;
 cin>>key;
 
-while(temp->next!=head){
+while(temp!=head){
 if(temp->info==key){
 cout<<"Key Found : "<<temp->info<<endl;
 return;
@@ -147,7 +147,7 @@ head->next=head;
 return;
 }
 
-while(temp->next!=head){
+while(temp!=head){
 temp=temp->next;
 }
 
@@ -155,7 +155,7 @@ temp1=new node;
 cout<<"Enter the value :"<<endl;
 cin>>temp1->info;
 temp1=head->next;
-head=temp1->next;
+temp->next=temp1;
 }
 
 
