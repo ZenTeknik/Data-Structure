@@ -30,11 +30,16 @@ head=temp=temp1=NULL;
 // destructer 
 list :: ~list(){
 temp=head;
+if(head==NULL)
+return;
+
 while(temp->next!=head){
 temp1=temp;
 temp=temp->next;
 delete temp1;
 }
+while (temp != head);
+    head = NULL;
 }
 
 
