@@ -82,13 +82,113 @@ else if(choice==7){
     
 }
 else if(choice==0){
-    
+ break;   
 }
 else {
     cout<<"Invalid Choice : "<<endl;
-}
+    }
 }while(choice!=0);
 
 }
+
+
+// fucntion for printing the value 
+void list :: print(){
+temp=head;
+
+if(head==NULL){
+cout<<"No Element to print : "<<endl;
+return;
+}
+
+while(temp!=NULL){
+cout<<temp->info<<" ";
+temp=temp->next;
+}
+cout<<endl;
+}
+
+
+// function for the lenght 
+void list :: length(){
+temp=head;
+int count=0;
+while(temp!=NULL){
+ count++;
+ temp=temp->next;
+ }
+ cout<<"Length : "<<count<<endl;
+cout<<endl;
+}
+
+
+
+// fucntion for the searching number
+void list :: search(){
+temp=head;
+int key;
+if(head==NULL){
+cout<<"No element to search : "<<endl;
+return;
+}
+
+cout<<"Enter the key to search : "<<endl;
+cin>>key;
+
+while(temp!=NULL){
+if(temp->info==key){
+cout<<"Key Found "<<temp->info<<endl;
+return;
+}
+temp=temp->next;
+}
+cout<<"Key Not Found : "<<endl;
+return;
+}
+
+
+
+// function for finding the minimum number 
+void list :: mini(){
+temp=head;
+if(head==NULL){
+cout<<"No Element to find minimum : "<<endl;
+return;
+}
+int min;
+min=head->info;
+
+while(temp!=NULL){
+if(temp->info<min){
+min=temp->info;
+}
+temp=temp->next;
+}
+cout<<"Minimum Number : "<<min<<endl;
+}
+
+
+
+// fucntion for finding the maximum number 
+void list :: maxi(){
+temp=head;
+if(head==NULL){
+cout<<"No Element to find Maximum : "<<endl;
+return;
+}
+int max;
+max=head->info;
+while(temp!=NULL){
+if(temp->info>max){
+max=temp->info;
+}
+temp=temp->next;
+}
+cout<<"Maximum Number : "<<temp->info<<endl;
+return;
+}
+
+
+
 
 
