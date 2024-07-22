@@ -55,9 +55,9 @@ cin>>choice;
 if(choice==1){
 add();
 }
-else if(choice==2){
-remove();
-}
+//else if(choice==2){
+//remove();
+//}
 else if(choice==3){
 print();
 }
@@ -136,7 +136,27 @@ cout<<"Key Not Found : "<<endl;
 
 
 // function for adding values 
-void list :: 
+void list :: add(){
+temp=head;
+
+if(head==NULL){
+head=new node;
+cout<<"Enter the value : "<<endl;
+cin>>head->info;
+head->next=head;
+return;
+}
+
+while(temp->next!=head){
+temp=temp->next;
+}
+
+temp1=new node;
+cout<<"Enter the value :"<<endl;
+cin>>temp1->info;
+temp1=head->next;
+head=temp1->next;
+}
 
 
 
@@ -146,7 +166,8 @@ void list ::
 
 int main(){
 
-
+list obj;
+obj.option();
 
 return 0 ;
 }
