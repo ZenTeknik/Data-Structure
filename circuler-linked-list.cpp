@@ -109,7 +109,6 @@ return;
 do{
 cout<<temp->info<<" ";
 temp=temp->next;
-
 }while(temp!=head);
 cout<<endl;
 }
@@ -127,13 +126,13 @@ int key;
 cout<<"Enter the key u wanna search : "<<endl;
 cin>>key;
 
-while(temp->next!=head){
+do{
 if(temp->info==key){
 cout<<"Key Found : "<<endl;
 return;
 }
 temp=temp->next;
-}
+}while(temp!=head);
 cout<<"Key Not Found : "<<endl;
 }
 
@@ -146,10 +145,10 @@ return;
 }
 
 int count=0;
-while(temp->next!=head){
+do{
 count++;
 temp=temp->next;
-}
+}while(temp!=head);
 cout<<"Length : "<<count<<endl;
 }
 
@@ -174,7 +173,7 @@ temp=temp->next;
 temp1=new node;
 cout<<"Enter the value : "<<endl;
 cin>>temp1->info;
-temp->next=head;
+temp1->next=head;
 temp->next=temp1;
 }
 
@@ -191,14 +190,27 @@ cout<<"Enter the elemet to remove : "<<endl;
 cin>>key;
 
 if(head->info==key){
-if(head->next==head){
-temp1=temp;
+ if(head->next==head){
+ delete head;
+ head==NULL;
+ return;
+ }
+ 
+ else {
+ temp=head;
+ while(temp->next!=head){
+ temp=temp->next;
+ }
+temp1=head;
 head=head->next;
+temp->next=head;
 delete temp1;
 return;
 }
-head==NULL;
 }
+
+
+
 
 while(temp->next!=head){
 if(temp->next->info==key){
