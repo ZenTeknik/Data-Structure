@@ -189,7 +189,17 @@ return;
 }
 
 while(temp->next!=head){
-if(temp->info==key){
+if(temp->next->info==key){
+temp1=temp->next;
+temp->next=temp->next->next;
+delete temp1;
+return;
+}
+temp=temp->next;
+}
+cout<<"Key not found : "<<endl;
+}
+
 
 
 
