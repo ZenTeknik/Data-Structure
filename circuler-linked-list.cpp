@@ -15,7 +15,7 @@ node *head,*temp,*temp1;
 public:
 
 list();
-~list():
+~list();
 void option();
 void length();
 void add();
@@ -35,7 +35,11 @@ head=temp=temp1=NULL;
 list :: ~list(){
 temp=head;
 
-while(temp->next!=NULL){
+if(head==NULL){
+return;
+}
+
+while(temp->next!=head){
 temp1=temp;
 temp=temp->next;
 delete temp1;
@@ -106,7 +110,8 @@ do{
 cout<<temp->info<<" ";
 temp=temp->next;
 
-}while(temp->next!=head);
+}while(temp!=head);
+cout<<endl;
 }
 
 
@@ -135,6 +140,11 @@ cout<<"Key Not Found : "<<endl;
 
 void list :: length(){
 temp=head;
+if(head==NULL){
+cout<<"NO element in the link : "<<endl;
+return;
+}
+
 int count=0;
 while(temp->next!=head){
 count++;
@@ -164,8 +174,8 @@ temp=temp->next;
 temp1=new node;
 cout<<"Enter the value : "<<endl;
 cin>>temp1->info;
+temp->next=head;
 temp->next=temp1;
-temp->next=temp->next->next;
 }
 
 
@@ -181,10 +191,13 @@ cout<<"Enter the elemet to remove : "<<endl;
 cin>>key;
 
 if(head->info==key){
+if(head->next==head){
 temp1=temp;
 head=head->next;
 delete temp1;
 return;
+}
+head==NULL;
 }
 
 while(temp->next!=head){
@@ -207,7 +220,8 @@ cout<<"Key not found : "<<endl;
 
 int main(){
 
-
+list obj;
+obj.option();
 
 return 0;
 }
