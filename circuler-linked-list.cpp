@@ -61,28 +61,27 @@ cin>>choice;
 
 switch(choice){
 case 1: 
-
+add();
 
 break;
 
 case 2: 
-
+remove();
 
 break;
 case 3: 
-
+print();
 
 break;
 case 4: 
-
+length();
 
 break;
 case 5: 
-
+search();
 
 break;
 case 0: 
-
 
 break;
 
