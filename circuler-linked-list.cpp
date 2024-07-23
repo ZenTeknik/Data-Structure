@@ -153,10 +153,44 @@ if(head==NULL){
 head=new node;
 cout<<"Enter the value  : "<<endl;
 cin>>head->info;
-
-
-
+head->next=head;
+return;
 }
+
+while(temp->next!=head){
+temp=temp->next;
+}
+
+
+temp1=new node;
+cout<<"Enter the value : "<<endl;
+cin>>temp1->info;
+temp->next=temp1;
+temp->next=temp->next->next;
+}
+
+
+void list :: remove(){
+temp=head;
+if(head==NULL){
+cout<<"No Element to remove : "<<endl;
+return;
+}
+
+int key;
+cout<<"Enter the elemet to remove : "<<endl;
+cin>>key;
+
+if(head->info==key){
+temp1=temp;
+head=head->next;
+delete temp1;
+return;
+}
+
+while(temp->next!=head){
+if(temp->info==key){
+
 
 
 
