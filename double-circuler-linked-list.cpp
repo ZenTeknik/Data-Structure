@@ -33,6 +33,10 @@ head=temp=temp1=NULL;
 // destructer 
 list :: ~list(){
 temp=head;
+if(head==NULL){
+return;
+}
+
 while(temp->next!=head){
 temp1=temp;
 temp=temp->next;
@@ -107,6 +111,42 @@ cout<<endl;
 
 void list :: length(){
 temp=head;
+int count=0;
+do{
+count++;
+temp=temp->next;
+}while(temp!=head);
+cout<<"Length : "<<count<<endl;
+}
+
+void list :: search(){
+temp=head;
+if(head==NULL){
+cout<<"No element to search : "<<endl;
+return;
+}
+
+int key;
+cout<<"Enter the key :"<<endl;
+cin>>key;
+
+do {
+if(temp->info==key){
+cout<<"Key Found : "<<endl;
+return;
+}
+temp=temp->next;
+}while(temp!=head);
+cout<<"Key not found : "<<endl;
+}
+
+
+void list :: add(){
+temp=head;
+
+
+
+}
 
 
 
