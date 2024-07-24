@@ -11,6 +11,8 @@ node *next;
 class list {
 private: 
 node *top,*temp;
+int count=0;
+const int limit=10;
 public: 
 list();
 ~list();
@@ -103,6 +105,8 @@ count--:
 return ;
 }
 
+
+// fucntion for printing the element in the stack
 void list :: print(){
 temp=top;
 
@@ -123,6 +127,6 @@ cout<<endl;
 int main(){
 list obj;
 obj.option();
-
+  
 return 0;
 }
