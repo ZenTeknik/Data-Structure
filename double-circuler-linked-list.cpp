@@ -144,9 +144,72 @@ cout<<"Key not found : "<<endl;
 void list :: add(){
 temp=head;
 
-
-
+if(head==NULL){
+head=new node;
+cout<<"Enter the value : "<<endl;
+cin>>head->info;
+head->next=head;
+head->prev=head;
+return;
 }
+
+while(temp->next!=head){
+temp=temp->next;
+}
+
+temp1=new node;
+cout<<"Enter the value "<<endl;
+cin>>temp1->info;
+temp1->next=head;
+temp1->prev=head;
+}
+
+
+void list :: remove(){
+temp=head;
+if(head==NULL){
+cout<<"No element to remove : "<<endl;
+return;
+}
+
+int key;
+cout<<"Enter the key to remove : "<<endl;
+cin>>key;
+
+if(head->info==key){
+ if(head->next==head){
+ delete head;
+  head==NULL;
+ return;
+ }
+ 
+while(temp->next!=head){
+temp=temp->next;
+}
+
+temp1=head;
+head=head->next;
+temp->next=head;
+temp1->prev=head;
+delete temp1;
+return;
+}
+
+
+while(temp->next!=head){
+ if(temp->next->info==key){
+temp1=temp->next;
+temp->prev=temp1;
+delete temp1;
+return;
+  }
+temp=temp->next;
+}
+cout<<"Ket not found : "<<endl;
+}
+
+
+
 
 
 
