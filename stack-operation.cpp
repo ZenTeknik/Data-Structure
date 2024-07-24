@@ -17,6 +17,7 @@ list();
 void option();
 void push();
 void pop();
+void print();
 };
 
 
@@ -113,14 +114,15 @@ cout<<endl;
 }
 
 
-}
 
-}
 
-}
+
+
+
 
 int main(){
-
+list obj;
+obj.option();
 
 return 0;
 }
