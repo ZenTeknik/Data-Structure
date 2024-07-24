@@ -105,7 +105,9 @@ cout<<endl;
 
 
 
-void list :: 
+void list :: length(){
+temp=head;
+
 
 
 
