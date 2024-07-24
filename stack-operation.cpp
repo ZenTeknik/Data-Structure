@@ -32,9 +32,10 @@ void list :: option(){
 int choice;
 do{
 cout<<"Avalible option : "<<endl;
-cout<<"1) push : "<<endl;
-cout<<"2) Pop  : "<<endl;
-cout<<"0) Exit : "<<endl;
+cout<<"1) push    : "<<endl;
+cout<<"2) Pop     : "<<endl;
+cout<<"3) Print   : "<<endl;
+cout<<"0) Exit    : "<<endl;
 cout<<"Enter your choice : "<<endl;
 cin>>choice;
 
@@ -46,6 +47,10 @@ break;
 
 case 2: 
 pop();
+break;
+
+case 3: 
+print();
 break;
 
 case 0: 
@@ -84,8 +89,33 @@ return;
 
 // function for removing the element from the stack 
 void list :: pop(){
-top=temp;
+temp=top;
 
+if(top==NULL){
+cout<<"No Element in the stack : "<<endl;
+return;
+}
+
+top=top->next;
+delete temp;
+count--:
+return ;
+}
+
+void list :: print(){
+temp=top;
+
+while(temp!=NULL){
+cout<<temp->info<<" ";
+temp=temp->next;
+}
+cout<<endl;
+}
+
+
+}
+
+}
 
 }
 
