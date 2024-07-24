@@ -162,6 +162,8 @@ cout<<"Enter the value "<<endl;
 cin>>temp1->info;
 temp1->next=head;
 temp1->prev=head;
+temp->next=temp1;
+head->prev=temp1;
 }
 
 
@@ -190,7 +192,7 @@ temp=temp->next;
 temp1=head;
 head=head->next;
 temp->next=head;
-temp1->prev=head;
+head->prev=temp;
 delete temp1;
 return;
 }
@@ -217,6 +219,7 @@ cout<<"Ket not found : "<<endl;
 
 
 int main(){
-
+list obj;
+obj.option();
 return 0;
 }
