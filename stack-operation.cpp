@@ -11,7 +11,7 @@ node *next;
 class list {
 private: 
 node *top,*temp;
-int count=0;
+int count;
 const int limit=10;
 public: 
 list();
@@ -26,8 +26,16 @@ void print();
 // constructer 
 list :: list(){
 int count=0;
-int limit=10;
+int limit;
 top=temp=NULL;
+}
+
+list :: ~list(){
+temp=top;
+while(top!=NULL){
+top=top->next;
+delete temp;
+}
 }
 
 
@@ -80,28 +88,29 @@ return;
 }
 
 if(count<=limit){
-temp=top;
+
 temp=new node;
 cout<<"Enter the value in the stack : "<<endl;
 cin>>temp->info;
-temp->next=NULL;
-top->next=temp;
+temp->next=top;
+top->next=NULL;
+top=temp;
 return;
 }
 }
 
 // function for removing the element from the stack 
 void list :: pop(){
-temp=top;
+
 
 if(top==NULL){
 cout<<"No Element in the stack : "<<endl;
 return;
 }
-
+temp=top;
 top=top->next;
 delete temp;
-count--:
+count--;
 return ;
 }
 
