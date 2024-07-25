@@ -262,6 +262,21 @@ return;
 
 
 
+void list :: print(){
+temp=top;
+
+if(top==NULL){
+cout<<"No element to print : "<<endl;
+return;
+}
+
+while(temp!=NULL){
+cout<<temp->info<<"  ";
+temp=temp->next;
+}
+cout<<endl;
+}
+
 
 
 int main(){
