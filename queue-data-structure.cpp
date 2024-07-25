@@ -9,7 +9,7 @@ node  *next;
 
 class queue{
 private:
-node *front,*rear;
+node *front,*temp;
 int count;
 int limit;
 public: 
@@ -23,16 +23,16 @@ void print();
 
 
 queue :: queue(){
-front=rear=NULL;
+front=temp=NULL;
 count=0;
 limit=5;
 }
 
 queue :: ~queue(){
-rear=front;
-while(rear!=NULL){
-rear=rear->next;
-delete rear;
+temp=front;
+while(temp!=NULL){
+temp=temp->next;
+delete temp;
 }
 }
 
@@ -68,7 +68,7 @@ cout<<"Invalid choice : "<<endl;
 
 
 void queue :: nqueue(){
-rear=front;
+temp=front;
 if(front==NULL){
 front=new node;
 count++;
@@ -79,19 +79,19 @@ return;
 }
 
 if(count<=limit){
-rear=new node;
+temp=new node;
 count++;
 cout<<"Enter the first letter of name : "<<endl;
-cin>>rear->info;
-rear->next=NULL;
-rear->next=front;
+cin>>temp->info;
+temp->next=NULL;
+front->next=temp;
 }
 }
 
 
 
 void queue :: dqueue(){
-rear=front;
+temp=front;
 
 if(front==NULL){
 cout<<"No person in the Queue : "<<endl;
@@ -99,23 +99,23 @@ return;
 }
 
 front=front->next;
-delete rear;
+delete temp;
 count--;
 return;
 }
 
 
 void queue :: print(){
-rear=front;
+temp=front;
 
 if(front==NULL){
 cout<<"No person in the queue : "<<endl;
 return;
 }
 
-while(rear!=NULL){
-cout<<rear->info;
-rear=rear->next;
+while(temp!=NULL){
+cout<<temp->info<<" ";
+temp=temp->next;
 }
 cout<<endl;
 }
