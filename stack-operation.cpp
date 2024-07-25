@@ -174,7 +174,7 @@ void pop();
 list :: list(){
 top=temp=NULL;
 count=0;
-limit=10;
+limit=2;
 }
 
 
