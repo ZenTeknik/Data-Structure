@@ -246,8 +246,28 @@ return;
 }
 
 
+void list :: pop(){
+if(top==NULL){
+cout<<"No element in the stack : "<<endl;
+return;
+}
+
+temp=top;
+top=top->next;
+delete temp;
+count--;
+return;
+}
+
+
+
+
+
+
 int main(){
 
+list obj;
+obj.option();
 
 return 0;
 }
