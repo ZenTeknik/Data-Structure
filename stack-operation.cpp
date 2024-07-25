@@ -1,3 +1,5 @@
+/*
+
 #include<iostream>
 using namespace std;
 
@@ -140,5 +142,35 @@ obj.option();
 return 0;
 }
 
+
+
+*/
+
+
+#include<iostream>
+using namespace std;
+
+struct node{
+int info;
+node  *next;
+};
+
+
+class list{
+private:
+node *temp,*top;
+int count;
+int limit;
+public : 
+
+
+
+}
+
+int main(){
+
+
+return 0;
+}
 
 
