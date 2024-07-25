@@ -264,7 +264,6 @@ cout<<"Key Not Found : "<<endl;
 
 
 
-
 void list :: remove(){
 temp=head;
 if(head==NULL){
