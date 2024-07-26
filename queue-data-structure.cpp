@@ -83,9 +83,26 @@ if(count<=limit){
 temp=new node;
 cout<<"Enter the first letter of your name : "<<endl;
 cin>>temp->info;
-
+count++;
+temp->next=NULL;
+front->next=temp;
+return;
 }
 
+
+
+// fucntion for the dqueue
+void queue :: dqueue(){
+temp=front;
+if(front==NULL){
+cout<<"No person in the queue : "<<endl;
+return;
+}
+
+front=front->next;
+delete temp;
+count--;
+}
 
 
 void queue :: print(){
