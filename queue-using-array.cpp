@@ -1,5 +1,5 @@
-#include<iosteram>
-using namespcace std;
+#include<iostream>
+using namespace std;
 
 class queue{
 private:
@@ -9,6 +9,8 @@ queue();
 ~queue();
 void option();
 void enqueue();
+void dequeue();
+void print();
 //void dequeue();
 };
 
@@ -58,7 +60,7 @@ cout<<"Invalid choice :"<<endl;
 
 
 void queue :: enqueue(){
-front=temp=arr[0];
+front=temp=0;
 
 if(front==NULL){
 cout<<"Enter the element in the array : "<<endl;
@@ -69,7 +71,7 @@ return;
 }
 
 if(count<=size){
-while(front!=size){
+while(count!=size){
 cout<<"Enter the element : "<<endl;
 cin>>*arr;
 *arr++;
@@ -81,7 +83,9 @@ cout<<"NO space avalibe in the queue : "<<endl;
 
 
 
+void queue :: print(){
 
+}
 
 
 int main(){
@@ -91,6 +95,6 @@ int size;
 cout<<"Enter the size of queue : "<<endl;
 cin>>obj.size;
 
-obj.arr=new int[size]
+obj.arr=new int[size];
 return 0;
 }
