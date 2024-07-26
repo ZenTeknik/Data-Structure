@@ -67,6 +67,25 @@ cout<<"Invalid choice : "<<endl;
 }
 
 
+// fucntion for the nqueue 
+void queue :: nqueue(){
+temp=front;
+if(front==NULL){
+front=new node;
+cout<<"Enter the first letter of your name : "<<endl;
+cin>>front->info;
+count++;
+front->next=NULL;
+return;
+}
+
+if(count<=limit){
+temp=new node;
+cout<<"Enter the first letter of your name : "<<endl;
+cin>>temp->info;
+
+}
+
 
 
 void queue :: print(){
