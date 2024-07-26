@@ -9,7 +9,7 @@ queue();
 ~queue();
 void option();
 void enqueue();
-void dequeue();
+//void dequeue();
 };
 
 queue :: queue(){
@@ -31,7 +31,7 @@ int choice;
 do{
 cout<<" Avalible option : "<<endl;
 cout<<"1) insert : "<<endl;
-cout<<"2) remove : "<<endl;
+//cout<<"2) remove : "<<endl;
 cout<<"3) print : "<<endl;
 cout<<"0) exit : "<<endl;
 cout<<"Enter your choice : "<<endl;
@@ -40,9 +40,9 @@ cin>>choice;
 if(choice==1){
 enqueue();
 }
-else if(choice==2){
-dequeue();
-}
+//else if(choice==2){
+//dequeue();
+//}
 else if(choice==3){
 print();
 }
@@ -60,9 +60,27 @@ cout<<"Invalid choice :"<<endl;
 void queue :: enqueue(){
 front=temp=arr[0];
 
-if()
-
+if(front==NULL){
+cout<<"Enter the element in the array : "<<endl;
+cin>>*arr;
+*arr++;
+count++;
+return;
 }
+
+if(count<=size){
+while(front!=size){
+cout<<"Enter the element : "<<endl;
+cin>>*arr;
+*arr++;
+count++;
+}
+}
+cout<<"NO space avalibe in the queue : "<<endl;
+}
+
+
+
 
 
 
