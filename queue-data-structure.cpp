@@ -67,42 +67,6 @@ cout<<"Invalid choice : "<<endl;
 }
 
 
-void queue :: nqueue(){
-temp=front;
-if(front==NULL){
-front=new node;
-count++;
-cout<<"Enter the first letter of name : "<<endl;
-cin>>front->info;
-front->next=NULL;
-return;
-}
-
-if(count<=limit){
-temp=new node;
-count++;
-cout<<"Enter the first letter of name : "<<endl;
-cin>>temp->info;
-temp->next=NULL;
-front->next=temp;
-}
-}
-
-
-
-void queue :: dqueue(){
-temp=front;
-
-if(front==NULL){
-cout<<"No person in the Queue : "<<endl;
-return;
-}
-
-front=front->next;
-delete temp;
-count--;
-return;
-}
 
 
 void queue :: print(){
