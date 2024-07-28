@@ -71,7 +71,7 @@ cout<<"Queue is Full : "<<endl;
 return;
 }
 else if(front==-1 && rear==-1){
-front=rear=NULL;
+front=rear=0;
 arr[rear]=x;
 }
 else {
@@ -84,8 +84,11 @@ return;
 
 
 void dequeue(){
-
+if(front==-1 && rear==-1 ){
+cout<<"No element to remove : "<<endl;
+return;
 }
+
 
 
 void peek(){
