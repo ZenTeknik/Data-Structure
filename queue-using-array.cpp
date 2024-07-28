@@ -85,8 +85,12 @@ if(front==-1 && rear==-1 ){
 cout<<"No element to remove : "<<endl;
 return;
 }
+else if(front==rear){
+front=rear=-1;
+}
 else{
-
+cout<<"The removing value : "<<arr[front]<<endl;
+front++;
 }
 }
 
