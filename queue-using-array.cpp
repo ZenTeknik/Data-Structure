@@ -7,6 +7,7 @@ int *arr;
 
 
 void option(){
+int x;
 int choice; 
 do{
 cout<<"Avalible option : "<<endl;
@@ -18,16 +19,18 @@ cout<<"0) exit : "<<endl;
 cout<<"Enter your choice :"<<endl;
 cin>>choice;
 if(choice==1){
-
+cout<<"Enter teh value to add : "<<endl;
+cin>>x;
+enqueue(x);
 }
 else if(choice==2){
-
+dequeue();
 }
 else if(choice==3){
-
+peek();
 }
 else if(choice==4){
-
+print();
 }
 else if(choice==0){
 break;
@@ -41,7 +44,7 @@ cout<<"Invalid choice : "<<endl;
 
 
 // adding element in the queue 
-void enqueu(int x){
+void enqueue(int x){
 if(rear==size-1){
 cout<<"Queue is Full : "<<endl;
 return;
@@ -57,10 +60,29 @@ return;
 }
 }
 
-void print(){
+void dequeue(){
+
+}
+
+void peek(){
 
 
 }
+
+
+// fucntion for printing the elements in the queue 
+void print(){
+if(front==-1 && rear==-1 ){
+cout<<"No element in the queue : "<<endl;
+return;
+}
+cout<<"Elements in the array : "<<endl;
+for(int i=0;i<size;i++){
+cout<<*arr<<" ";
+}
+cout<<endl;
+}
+
 
 
 int main(){
