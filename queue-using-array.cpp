@@ -1,9 +1,30 @@
 #include<iostream>
 using namespace std;
-int size;
+int n =5;
 int front=-1;
 int rear=-1;
-int *arr;
+int arr[n];
+
+void enqueue(int x);
+void dequeue();
+void print();
+void peek();
+void option();
+
+
+
+int main(){
+
+
+option();
+
+return 0;
+}
+
+
+
+
+
 
 
 void option(){
@@ -45,17 +66,17 @@ cout<<"Invalid choice : "<<endl;
 
 // adding element in the queue 
 void enqueue(int x){
-if(rear==size-1){
+if(rear==n-1){
 cout<<"Queue is Full : "<<endl;
 return;
 }
 else if(front==-1 && rear==-1){
 front=rear=0;
-*arr[rear]=x;
+arr[rear]=x;
 }
 else {
 rear++;
-*arr[rear]=x;
+arr[rear]=x;
 return;
 }
 }
@@ -80,23 +101,12 @@ cout<<"No element in the queue : "<<endl;
 return;
 }
 cout<<"Elements in the array : "<<endl;
-for(int i=0;i<size;i++){
-cout<<*arr<<" ";
+for(int i=0;i<n;i++){
+cout<<arr[i]<<" ";
 }
 cout<<endl;
 }
 
 
 
-int main(){
 
-
-cout<<"Enter the size of an array  : "<<endl;
-cin>>size;
-
-arr=new int[size];
-
-option();
-
-return 0;
-}
