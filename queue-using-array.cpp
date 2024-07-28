@@ -14,10 +14,7 @@ void option();
 
 
 int main(){
-
-
 option();
-
 return 0;
 }
 
@@ -88,12 +85,18 @@ if(front==-1 && rear==-1 ){
 cout<<"No element to remove : "<<endl;
 return;
 }
+else{
 
+}
+}
 
 
 void peek(){
-
-
+if(front==-1 && rear==-1 ){
+cout<<"No element to peek  : "<<endl;
+return;
+}
+cout<<"First element : "<<arr[front]<<endl;
 }
 
 
