@@ -71,7 +71,7 @@ cout<<"Queue is Full : "<<endl;
 return;
 }
 else if(front==-1 && rear==-1){
-front=rear=0;
+front=rear=NULL;
 arr[rear]=x;
 }
 else {
