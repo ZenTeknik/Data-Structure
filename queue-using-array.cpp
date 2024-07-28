@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-int n =5;
+int n=5;
 int front=-1;
 int rear=-1;
 int arr[n];
