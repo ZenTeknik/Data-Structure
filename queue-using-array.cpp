@@ -39,6 +39,8 @@ cout<<"Invalid choice : "<<endl;
 }while(choice!=0);
 }
 
+
+// adding element in the queue 
 void enqueu(int x){
 if(rear==size-1){
 cout<<"Queue is Full : "<<endl;
@@ -46,17 +48,19 @@ return;
 }
 else if(front==-1 && rear==-1){
 front=rear=0;
-arr[rear]=x;
+*arr[rear]=x;
+}
+else {
+rear++;
+*arr[rear]=x;
 return;
 }
-else if()
+}
 
-
-
+void print(){
 
 
 }
-
 
 
 int main(){
