@@ -74,4 +74,4 @@ arr=new int[size];
 option();
 
 return 0;
-}nt size
+}
