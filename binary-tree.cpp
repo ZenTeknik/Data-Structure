@@ -2,26 +2,41 @@
 using namespace std;
 
 
-struct node{
+class node{
+public:
 int info;
-struct node *left;
-struct node *right;
+ node *left;
+ node *right;
 
+
+
+// constructer
 node(int val ){
 info=val;
 left=NULL;
 right=NULL;
 }
 
+// destructer
+~node{
+//cout<<"Destructer : "<<info<<endl;
+if(left){
+delete left;
+left=NULL;
+}
 
-
+if(right){
+delete right;
+right=NULL;
+}
+}
 };
 
 
 
 int main(){
 
-struct node *root=  new node(1);
+ node *root=  new node(1);
 root->left=  new node(2);
 root->right=  new node(3);
 
