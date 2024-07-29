@@ -120,6 +120,22 @@ cout<<root->info<<" ";
 }
 }
 
+
+// inoreder 
+void inorder(node *root){
+if(root==NULL){
+cout<<" -1 ";
+}
+else{
+inorder(root->left);
+cout<<root->info<<" ";
+inorder(root->right);
+}
+}
+
+
+
+
 int main(){
 
  node *root=new node(1);
@@ -131,12 +147,17 @@ root->right->right=new node(6);
 
 
 // for printing the preorder of the tree like fron top to down 
+cout<<"Preorder: "<<endl;
 preorder(root);
 cout<<endl;
 // for printing the postorder of the tree like from down to top
+cout<<"Postorder: "<<endl;
 postorder(root);
-
-
+cout<<endl;
+// for printing the left side like inorder way 
+cout<<"Inorder: "<<endl;
+inorder(root);
+cout<<endl;
 
 delete root;
 
