@@ -33,6 +33,19 @@ right=NULL;
 };
 
 
+void preorder(node *root ){
+if(root==NULL){
+//cout<<" NULL "<<endl;
+return;
+}
+else{
+cout<<root->info<<" ";
+preorder(root->left);
+preorder(root->right);
+}
+}
+
+
 
 int main(){
 
@@ -44,6 +57,8 @@ root->left->left =new node(4);
 root->left->right=NULL;
 root->right->left=new node(5);
 root->right->right=new node(6);
+preorder(root);
+cout<<endl;
 
 delete root;
 return 0;
