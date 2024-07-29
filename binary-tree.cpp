@@ -18,8 +18,8 @@ right=NULL;
 }
 
 // destructer
-~node{
-//cout<<"Destructer : "<<info<<endl;
+~node(){
+cout<<"Destructer : "<<info<<endl;
 if(left){
 delete left;
 left=NULL;
