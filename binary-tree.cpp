@@ -11,11 +11,9 @@ node(int val ){
 info=val;
 left=NULL;
 right=NULL;
-
-~node{
-delete left;
-delete right;
 }
+
+
 
 };
 
