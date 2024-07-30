@@ -34,7 +34,7 @@ if(root==NULL){
 return;
 }
 
-queue<*node> q;
+queue<node*>q;
 q.push(root);
 
 while(!q.empty()){
