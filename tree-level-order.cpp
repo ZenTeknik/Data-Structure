@@ -100,11 +100,26 @@ right=NULL;
 
 // destructer 
 ~node(){
+if(left){
+delete left;
+left=NULL;
+}
 
-
+if(right){
+delete right;
+right=NULL;
+}
 }
 
 };
+
+
+
+void levelorder(){
+
+
+
+}
 
 int main(){
 
