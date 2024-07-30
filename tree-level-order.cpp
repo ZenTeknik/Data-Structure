@@ -29,12 +29,49 @@ right=NULL;
 };
 
 
-void  
+void levelorder(node *root){
+if(root==NULL){
+return;
+}
+
+queue<*node> q;
+q.push(root);
+
+while(!q.empty()){
+node *current=q.front();
+q.pop();
+
+cout<<current->info<<" ";
+
+if(current->left!=NULL){
+q.push(current->left);
+}
+
+if(current->right!=NULL){
+q.push(current->right);
+}
+
+}
+}
+
 
 
 
 int main(){
 
+
+node *root=new node (1);
+root->left=new node(2);
+root->right=new node(3);
+root->left->left=new node(5);
+root->left->right=new node(6);
+
+root->right->left=new node(7);
+root->right->right=new node(8);
+
+levelorder(root);
+
+delete root;
 
 return 0;
 }
