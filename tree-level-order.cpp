@@ -1,5 +1,5 @@
 #include<iostream>
-#include<queue>
+#include<queue>       // for managing the queue  that we create for storing the element in level up in queue 
 using namespace std;
 
 class node{
@@ -23,14 +23,16 @@ left=NULL;
 if(right){
 delete right;
 right=NULL;
+ }
 }
-}
-
 
 };
 
 
-void 
+void  
+
+
+
 int main(){
 
 
