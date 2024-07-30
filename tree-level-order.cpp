@@ -124,7 +124,7 @@ return;
 
 
 queue<node*>q;
-q.push(root);
+q.push(root); 
 
 
 while(!q.empty()){
