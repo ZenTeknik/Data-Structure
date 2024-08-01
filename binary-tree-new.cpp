@@ -84,14 +84,20 @@ cout<<"Invalid choice : "<<endl;
 // fucntion for the preorder
 void tree :: preorder(node *root){
 if(root==NULL){
+cout<<"Tree in empty : "<<endl;
 return;
 }
-else{
+
 cout<<root->info<<" ";
+
+if(root->left!=NULL){
 preorder(root->left);
+}
+if(root->right!=NULL){
 preorder(root->right);
 }
 }
+
 
 
 
