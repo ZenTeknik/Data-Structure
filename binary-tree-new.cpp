@@ -81,7 +81,6 @@ cout<<"Invalid choice : "<<endl;
 // fucntion for the preorder
 void tree :: preorder(node *root){
 if(root==NULL){
-cout<<"Tree is empty : "<<endl;
 return;
 }
 else{
@@ -89,6 +88,7 @@ cout<<root->info<<" ";
 preorder(root->left);
 preorder(root->right);
 }
+cout<<endl;
 }
 
 
@@ -96,7 +96,6 @@ preorder(root->right);
 // function for the postorder
 void tree :: postorder(node *root){
 if(root==NULL){
-cout<<"Tree in empty : "<<endl;
 return;
 }
 else{
@@ -104,14 +103,13 @@ postorder(root->left);
 postorder(root->right);
 cout<<root->info<<" ";
 }
+cout<<endl;
 }
 
 
 // function for inorder
 void tree :: inorder(node *root){
-
 if(root==NULL){
-cout<<"Tree is empty : "<<endl;
 return;
 }
 else{
@@ -119,12 +117,12 @@ inorder(root->left);
 cout<<root->info<<" ";
 inorder(root->right);
 }
+cout<<endl;
 }
 
 // function for the level order 
 void tree :: levelorder(node *root){
 if(root==NULL){
-cout<<"Tree is empty : "<<endl;
 return;
 }
 else{
@@ -147,6 +145,7 @@ q.push(current->right);
 }
 }
 }
+cout<<endl;
 }
 
 
