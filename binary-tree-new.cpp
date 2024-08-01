@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 
 struct node{
@@ -77,9 +78,46 @@ cout<<"Tree is empty : "<<endl;
 return;
 }
 
-
-
+cout<<root->info<<" ";
+preorder(root->left);
+preorder(root->right);
 }
+
+
+void tree :: postorder(){
+if(root==NULL){
+cout<<"Tree in empty : "<<endl;
+return;
+}
+postorder(root->left);
+postorder(root->right);
+cout<<root->info<<" ";
+}
+
+
+// function for inorder
+void tree :: inorder(){
+
+if(root==NULL){
+cout<<"Tree is empty : "<<endl;
+return;
+}
+inorder(root-left);
+cout<<root->info<<" ";
+inorder(root->right);
+}
+
+
+// function for the level order 
+void tree :: inorder(){
+if(root=NULL){
+cout<<"Tree is empty : "<<endl;
+return;
+}
+
+queue<node*> q;
+q.push(root);
+
 
 
 
