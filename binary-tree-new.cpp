@@ -181,10 +181,38 @@ root=temp;
 return;
 }
 
-
+if(temp->info==key){
+cout<<"Key is already present in this tree : "<<endl;
+return;
 }
 
+if(temp->info>key){
+  if(temp->left!=NULL){
+insertion(temp->left);
+return;
+}
+else {
+temp->left=new node;
+temp->left->info=key;
+temp->left->left=NULL;
+temp->left->right=NULL;
+return;
+}
+}
 
+if(temp->info<key){
+  if(temp->right!=NULL){
+insertion(temp->right);
+return;
+}
+else {
+temp->right=new node;
+temp->right->info=key;
+temp->right->left=NULL;
+temp->right->right=NULL;
+return;
+}
+}
 
 }
 
