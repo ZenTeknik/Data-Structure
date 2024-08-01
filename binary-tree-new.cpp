@@ -3,19 +3,20 @@
 using namespace std;
 
 struct node{
-int info;
+int info,key;
 node * left,*right;
  node(int val) : info(val), left(NULL), right(NULL) {};
 };
 
 class tree{
 public:
-node *root;
+node *root,*temp;
 
 tree();
 ~tree();
 void deleteTree(node* root);
 void option();
+void insertion(node *root,node *temp ,int key );
 void preorder(node *root);
 void postorder(node *root);
 void inorder(node *root);
@@ -46,26 +47,33 @@ void tree :: option(){
 int choice;
 do{
 cout<<"Avalible options : "<<endl;
-cout<<"1) preorder :"<<endl;
-cout<<"2) postorder :"<<endl;
-cout<<"3) inorder :"<<endl;
-cout<<"4) levelorder :"<<endl;
+cout<<"1) insertion :"<<endl;
+cout<<"2) preorder :"<<endl;
+cout<<"3) postorder :"<<endl;
+cout<<"4) inorder :"<<endl;
+cout<<"5) levelorder :"<<endl;
 cout<<"0) Exit :"<<endl;
 cin>>choice;
 
 if(choice==1){
-preorder(root);
+cout<<"Enter the key :"<<endl;
+cin>>key;
+insertion(root,temp,key);
 cout<<endl;
 }
 else if(choice==2){
-postorder(root);
+preorder(root);
 cout<<endl;
 }
 else if(choice==3){
-inorder(root);
+postorder(root);
 cout<<endl;
 }
 else if(choice==4){
+inorder(root);
+cout<<endl;
+}
+else if(choice==5){
 levelorder(root);
 cout<<endl;
 }
@@ -158,6 +166,26 @@ q.push(current->right);
 }
 }
 }
+}
+
+
+// function for the insertion of new node 
+void tree :: insertion(node *root, node *temp,int key){
+if(root==NULL){
+
+temp=new node;
+temp->info=key;
+temp->left=NULL;
+temp->right=NULL;
+root=temp;
+return;
+}
+
+
+}
+
+
+
 }
 
 
