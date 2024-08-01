@@ -5,42 +5,44 @@ using namespace std;
 struct node{
 int info;
 node * left,*right;
+ node(int val) : info(val), left(NULL), right(NULL) {};
 };
 
 class tree{
 public:
 node *root;
 
-tree(info);
+tree();
 ~tree();
-void option(root);
-void preorder(root);
-void postorder(root);
-void inorder(root);
-void levelorder(root);
+void deleteTree(node* root);
+void option();
+void preorder(node *root);
+void postorder(node *root);
+void inorder(node *root);
+void levelorder(node *root);
 };
 
 
 // constructer
-tree :: tree(int info){
-this->info=info;
-left=NULL
-right=NULL;
+tree :: tree(){
+root=NULL;
 }
 
 // destructer 
 tree :: ~tree(){
-if(left){
-delete left;
+deleteTree(root);
 }
 
-if(right){
-delete right;
- }
-}
 
+void tree::deleteTree(node* root) {
+    if (root != nullptr) {
+        deleteTree(root->left);
+        deleteTree(root->right);
+        delete root;
+    }
+}
 // fucntion for options 
-void tree : option(node *root){
+void tree :: option(){
 int choice;
 do{
 cout<<"Avalible options : "<<endl;
@@ -75,26 +77,33 @@ cout<<"Invalid choice : "<<endl;
 }
 
 
+
+// fucntion for the preorder
 void tree :: preorder(node *root){
 if(root==NULL){
 cout<<"Tree is empty : "<<endl;
 return;
 }
-
+else{
 cout<<root->info<<" ";
 preorder(root->left);
 preorder(root->right);
 }
+}
 
 
+
+// function for the postorder
 void tree :: postorder(node *root){
 if(root==NULL){
 cout<<"Tree in empty : "<<endl;
 return;
 }
+else{
 postorder(root->left);
 postorder(root->right);
 cout<<root->info<<" ";
+}
 }
 
 
@@ -105,19 +114,20 @@ if(root==NULL){
 cout<<"Tree is empty : "<<endl;
 return;
 }
-inorder(root-left);
+else{
+inorder(root->left);
 cout<<root->info<<" ";
 inorder(root->right);
 }
-
+}
 
 // function for the level order 
-void tree :: inorder(node *root){
-if(root=NULL){
+void tree :: levelorder(node *root){
+if(root==NULL){
 cout<<"Tree is empty : "<<endl;
 return;
 }
-
+else{
 queue<node*> q;
 q.push(root);
 
@@ -137,7 +147,7 @@ q.push(current->right);
 }
 }
 }
-
+}
 
 
 
@@ -153,8 +163,6 @@ obj.root->right->right=new node(6);
 
 
 obj.option();
-
-delete root;
 
 return 0;
 }
