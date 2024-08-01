@@ -71,6 +71,15 @@ cout<<"Invalid choice : "<<endl;
 }
 
 
+void tree :: preorder(){
+if(root==NULL){
+cout<<"Tree is empty : "<<endl;
+return;
+}
+
+
+
+}
 
 
 
