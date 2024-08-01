@@ -4,23 +4,26 @@ using namespace std;
 
 struct node{
 int info;
-node * left,*right,*root;
+node * left,*right;
 };
 
 class tree{
 public:
-tree();
+node *root;
+
+tree(info);
 ~tree();
-void option();
-void preorder();
-void postorder();
-void inorder();
-void levelorder();
+void option(root);
+void preorder(root);
+void postorder(root);
+void inorder(root);
+void levelorder(root);
 };
 
 
 // constructer
-tree :: tree(){
+tree :: tree(int info){
+this->info=info;
 left=NULL
 right=NULL;
 }
@@ -37,7 +40,7 @@ delete right;
 }
 
 // fucntion for options 
-void tree : option(){
+void tree : option(node *root){
 int choice;
 do{
 cout<<"Avalible options : "<<endl;
@@ -49,17 +52,17 @@ cout<<"0) Exit :"<<endl;
 cin>>choice;
 
 if(choice==1){
-
+preorder(root);
 }
 else if(choice==2){
-
+postorder(root);
 
 }
 else if(choice==3){
-
+inorder(root);
 }
 else if(choice==4){
-
+levelorder(root);
 }
 else if(choice==0){
 break;
@@ -72,7 +75,7 @@ cout<<"Invalid choice : "<<endl;
 }
 
 
-void tree :: preorder(){
+void tree :: preorder(node *root){
 if(root==NULL){
 cout<<"Tree is empty : "<<endl;
 return;
@@ -84,7 +87,7 @@ preorder(root->right);
 }
 
 
-void tree :: postorder(){
+void tree :: postorder(node *root){
 if(root==NULL){
 cout<<"Tree in empty : "<<endl;
 return;
@@ -96,7 +99,7 @@ cout<<root->info<<" ";
 
 
 // function for inorder
-void tree :: inorder(){
+void tree :: inorder(node *root){
 
 if(root==NULL){
 cout<<"Tree is empty : "<<endl;
@@ -109,7 +112,7 @@ inorder(root->right);
 
 
 // function for the level order 
-void tree :: inorder(){
+void tree :: inorder(node *root){
 if(root=NULL){
 cout<<"Tree is empty : "<<endl;
 return;
@@ -118,11 +121,41 @@ return;
 queue<node*> q;
 q.push(root);
 
+while(!q.empty()){
+node *current=q.front();
+q.pop();
+
+
+cout<<current->info<<" ";
+
+if(current->left!=NULL){
+q.push(current->left);
+}
+
+if(current->right!=NULL){
+q.push(current->right);
+}
+}
+}
+
+
 
 
 
 int main(){
+tree obj;
+obj.root=new node(1);
+obj.root->left=new node(2);
+obj.root->left->left=new node(3);
+obj.root->right=new node(4);
+obj.root->right->left=new node(5);
+obj.root->right->right=new node(6);
 
+
+obj.option();
+
+delete root;
 
 return 0;
 }
+
