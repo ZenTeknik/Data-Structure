@@ -16,7 +16,7 @@ tree();
 ~tree();
 void deleteTree(node* root);
 void option();
-void insertion(node *root,node *temp ,int key );
+void insertion(int key);
 void preorder(node *root);
 void postorder(node *root);
 void inorder(node *root);
@@ -58,7 +58,7 @@ cin>>choice;
 if(choice==1){
 cout<<"Enter the key :"<<endl;
 cin>>key;
-insertion(root,temp,key);
+insertion(key);
 cout<<endl;
 }
 else if(choice==2){
@@ -170,46 +170,47 @@ q.push(current->right);
 
 
 // function for the insertion of new node 
-void tree :: insertion(node *root, node *temp,int key){
+void tree :: insertion(int key){
 if(root==NULL){
 
-temp=new node;
-temp->info=key;
-temp->left=NULL;
-temp->right=NULL;
-root=temp;
+root=new node(key);
+root->left=NULL;
+root->right=NULL;
 return;
 }
 
-if(temp->info==key){
+
+
+
+if(root->info==key){
 cout<<"Key is already present in this tree : "<<endl;
 return;
 }
 
-if(temp->info>key){
-  if(temp->left!=NULL){
-insertion(temp->left);
+if(root->info>key){
+  if(root->left!=NULL){
+insertion(root->left);
 return;
 }
 else {
-temp->left=new node;
-temp->left->info=key;
-temp->left->left=NULL;
-temp->left->right=NULL;
+root->left=new node;
+root->left->info=key;
+root->left->left=NULL;
+root->left->right=NULL;
 return;
 }
 }
 
-if(temp->info<key){
-  if(temp->right!=NULL){
-insertion(temp->right);
+if(root->info<key){
+  if(root->right!=NULL){
+insertion(root->right);
 return;
 }
 else {
-temp->right=new node;
-temp->right->info=key;
-temp->right->left=NULL;
-temp->right->right=NULL;
+root->right=new node;
+root->right->info=key;
+root->right->left=NULL;
+root->right->right=NULL;
 return;
 }
 }
@@ -224,7 +225,7 @@ tree obj;
 
 
 obj.option();
-
+  
 return 0;
 }
 
