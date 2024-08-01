@@ -55,16 +55,19 @@ cin>>choice;
 
 if(choice==1){
 preorder(root);
+cout<<endl;
 }
 else if(choice==2){
 postorder(root);
-
+cout<<endl;
 }
 else if(choice==3){
 inorder(root);
+cout<<endl;
 }
 else if(choice==4){
 levelorder(root);
+cout<<endl;
 }
 else if(choice==0){
 break;
@@ -88,7 +91,6 @@ cout<<root->info<<" ";
 preorder(root->left);
 preorder(root->right);
 }
-cout<<endl;
 }
 
 
@@ -103,7 +105,6 @@ postorder(root->left);
 postorder(root->right);
 cout<<root->info<<" ";
 }
-cout<<endl;
 }
 
 
@@ -117,7 +118,6 @@ inorder(root->left);
 cout<<root->info<<" ";
 inorder(root->right);
 }
-cout<<endl;
 }
 
 // function for the level order 
@@ -145,7 +145,6 @@ q.push(current->right);
 }
 }
 }
-cout<<endl;
 }
 
 
