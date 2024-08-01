@@ -165,8 +165,9 @@ q.push(current->right);
 
 int main(){
 tree obj;
-obj.root=new node(1);
 /*
+obj.root=new node(1);
+
 obj.root->left=new node(2);
 obj.root->left->left=new node(3);
 obj.root->right=new node(4);
