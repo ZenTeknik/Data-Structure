@@ -104,24 +104,31 @@ preorder(root->right);
 // function for the postorder
 void tree :: postorder(node *root){
 if(root==NULL){
+cout<<"Tree is empty : "<<endl;
 return;
 }
-else{
+if(root->left!=NULL){
 postorder(root->left);
+}
+if(root->right){
 postorder(root->right);
+}
 cout<<root->info<<" ";
 }
-}
+
 
 
 // function for inorder
 void tree :: inorder(node *root){
 if(root==NULL){
+cout<<"Tree in empty : "<<endl;
 return;
 }
-else{
+if(root->left){
 inorder(root->left);
+}
 cout<<root->info<<" ";
+if(root->right!=NULL){
 inorder(root->right);
 }
 }
