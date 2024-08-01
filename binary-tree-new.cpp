@@ -3,7 +3,7 @@
 using namespace std;
 
 struct node{
-int info,key;
+int info;
 node * left,*right;
  node(int val) : info(val), left(NULL), right(NULL) {};
 };
@@ -44,7 +44,7 @@ void tree::deleteTree(node* root) {
 }
 // fucntion for options 
 void tree :: option(){
-int choice;
+int choice,key;
 do{
 cout<<"Avalible options : "<<endl;
 cout<<"1) insertion :"<<endl;
@@ -222,12 +222,6 @@ return;
 int main(){
 tree obj;
 
-obj.root=new node(1);
-obj.root->left=new node(2);
-obj.root->left->left=new node(3);
-obj.root->right=new node(4);
-obj.root->right->left=new node(5);
-obj.root->right->right=new node(6);
 
 obj.option();
 
