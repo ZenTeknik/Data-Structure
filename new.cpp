@@ -20,8 +20,10 @@ tree();
 ~tree();
 void deletion(node *root);
 void insert(node *&root,int key );
-void 
-
+void preorder(node *root);
+void postorder(node *root);
+void inorder(node *root);
+void levelorder(node *root);
 };
 
 int main(){
