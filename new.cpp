@@ -18,6 +18,7 @@ node *root;
 public:
 tree();
 ~tree();
+void option();
 void deletion(node *root);
 void insert(node *&root,int key );
 void preorder(node *root);
@@ -25,6 +26,22 @@ void postorder(node *root);
 void inorder(node *root);
 void levelorder(node *root);
 };
+
+// cosntructer 
+tree :: tree(){
+root=NULL;
+}
+
+// destructer 
+tree :: ~tree(){
+deletion(root);
+}
+
+void tree :: deletion(node *root){
+
+
+}
+
 
 int main(){
 
