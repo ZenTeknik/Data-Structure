@@ -130,9 +130,24 @@ preorder(root->right);
 
 // fucntion for the postorder 
 void tree :: postorder(node *root){
-
-
+if(root==NULL){
+cout<<"Tree is empty : "<<endl;
+return;
 }
+
+if(root->left!=NULL){
+postorder(root->left);
+}
+if(root->right!=NULL){
+postorder(root->right);
+}
+cout<<root->info<<" ";
+}
+
+
+// fucntion for the inorder
+void tree :: inorder(node *root){
+
 
 int main(){
 
