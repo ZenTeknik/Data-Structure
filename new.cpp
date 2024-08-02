@@ -76,12 +76,68 @@ cout<<"Invalid choice : "<<endl;
 
 
 
+
+
 void preorder(node *root){
+if(root==NULL){
+cout<<"Tree is empty :"<<endl;
+return;
+}
+cout<<root->info<<" ";
+if(root->left!=NULL){
+preorder(root->left);
+}
+if(root->right!=NULL){
+preorder(root->right);
+}
+}
 
 
+
+void tree :: insert(int key){
+if(root==NULL){
+root=new node;
+root->left=NULL;
+root->right=NULL;
+root=key;
+return;
+}
+
+if(key==root->info){
+cout<<"key is already avalible in this tree : "<<endl;
+return;
+}
+
+if(root->info>key){
+  if(root->left!=NULL){
+ insert(root->left);
+ return;
+}
+}
+else{
+root->left=new node;
+root->left->info=key;
+root->left->left=NULL;
+root->left->right=NULL;
+return;
+}
+
+if(root->info<key){
+  if(root->right!=NULL){
+insert(root->right);
+}
+}
+else {
+root->right=new node;
+root->right->info=key;
+root->right->left=NULL;
+root->right->right=NULL;
+return;
 
 }
 
+
+}
 
 
 int main(){
