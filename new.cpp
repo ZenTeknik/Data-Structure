@@ -45,7 +45,7 @@ deletion(root->right);
 delete root;
 }
 
-
+// function for the option's
 void tree :: option(){
 int choice,key;
 do{
@@ -89,7 +89,7 @@ cout<<"Invalid choice : "<<endl;
 }
 
 
-
+// fucntion for the insertion of new node 
 void insert(node *&root,int key){
 if(root==NULL){
 root=new node(key);
@@ -101,7 +101,21 @@ cout<<"Key is already in Tree : "<<endl;
 return;
 }
 
-if(key<)
+if(key<root->info){
+insert(root->left, key);
+return;
+}
+else{
+insert(root->right,key);
+return;
+}
+
+}
+
+
+// fucntion for the preorder
+void tree :: preorder(node *root){
+
 
 }
 
