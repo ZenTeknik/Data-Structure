@@ -115,6 +115,21 @@ return;
 
 // fucntion for the preorder
 void tree :: preorder(node *root){
+if(root==NULL){
+cout<<"Tree is empty : "<<endl;
+return;
+}
+cout<<root->info<<" "; 
+if(root->left!=NULL){
+preorder(root->left);
+}
+if(root->right!=NULL){
+preorder(root->right);
+}
+}
+
+// fucntion for the postorder 
+void tree :: postorder(node *root){
 
 
 }
