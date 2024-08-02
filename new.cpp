@@ -7,7 +7,7 @@ struct node{
 int info;
 node *right,*left;
 
-node(int val) : val(info), left(NULL),right(NULL){};
+node(int val) : info(val), left(NULL),right(NULL){};
 };
 
 
@@ -44,6 +44,7 @@ deletion(root->left);
 deletion(root->right);
 delete root;
 }
+}
 
 // function for the option's
 void tree :: option(){
@@ -60,7 +61,9 @@ cout<<"Enter your choice : "<<endl;
 cin>>choice;
 
 if(choice==1){
-insert(root);
+cout<<"Enter the key : "<<endl;
+cin>>key;
+insert(root,key);
 cout<<endl;
 }
 else if(choice==2){
@@ -90,7 +93,7 @@ cout<<"Invalid choice : "<<endl;
 
 
 // fucntion for the insertion of new node 
-void insert(node *&root,int key){
+void tree ::  insert(node *&root,int key){
 if(root==NULL){
 root=new node(key);
 return;
@@ -147,12 +150,54 @@ cout<<root->info<<" ";
 
 // fucntion for the inorder
 void tree :: inorder(node *root){
+if(root==NULL){
+cout<<"Tree is empty : "<<endl;
+return;
+}
+
+if(root->left!=NULL){
+inorder(root->left);
+}
+cout<<root->info<<" ";
+
+if(root->right!=NULL){
+inorder(root->right);
+}
+}
+
+
+// function for the level order
+void tree :: levelorder(node *root){
+if(root==NULL){
+cout<<"Tree is empty : "<<endl;
+return;
+}
+
+queue<node*>q;
+q.push(root);
+
+while(!q.empty()){
+node *current=q.front();
+q.pop();
+
+cout<<current->info<<" ";
+
+if(current->left!=NULL){
+ q.push(current->left);
+ }
+ 
+ if(current->right!=NULL){
+q.push(current->right);
+}
+
+}
+}
+
 
 
 int main(){
-
-
-
+tree obj;
+obj.option();
 return 0;
 }
 
