@@ -1,4 +1,4 @@
-#include<iosrteam>
+#include<iostream>
 #include<queue>
 using namespace std;
 
@@ -14,12 +14,14 @@ public:
 
 tree();
 ~tree();
-void deleteion();
+void deleteion(node * root);
 void option();
-
-
-
+void insert(key);
+void preorder(node *root);
 };
+
+
+
 
 int main(){
 
