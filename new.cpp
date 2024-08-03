@@ -25,6 +25,7 @@ void preorder(node *root);
 void postorder(node *root);
 void inorder(node *root);
 void levelorder(node *root);
+node* search(node *root,int key1);
 };
 
 // cosntructer 
@@ -48,7 +49,7 @@ delete root;
 
 // function for the option's
 void tree :: option(){
-int choice,key;
+int choice,key,key1;
 do{
 cout<<"Avalible option : "<<endl;
 cout<<"1) Insert "<<endl;
@@ -56,6 +57,7 @@ cout<<"2) Preorder "<<endl;
 cout<<"3) Postorder "<<endl;
 cout<<"4) Inorder "<<endl;
 cout<<"5) Levelorder "<<endl;
+cout<<"6) Search  : "<<endl;
 cout<<"0) Exit "<<endl;
 cout<<"Enter your choice : "<<endl;
 cin>>choice;
@@ -80,6 +82,17 @@ cout<<endl;
 }
 else if(choice==5){
 levelorder(root);
+cout<<endl;
+}
+else if(choice==6){
+cout<<"Enter the key : "<<endl;
+cin>>key1;
+if(search(root,key1)){
+cout<<"Key is found : "<<endl;
+}
+else{
+cout<<"Not Found : "<<endl;
+}
 cout<<endl;
 }
 else if(choice==0){
@@ -193,6 +206,23 @@ q.push(current->right);
 }
 }
 
+
+
+// fucntion for search 
+node*  tree ::  search(node  *root, int key1){
+if(root==NULL || key1==root->info){
+return root;
+}
+
+
+
+if(key1>root->info){
+return search(root->right,key1);
+}
+else{
+return  search(root->left,key1);
+}
+}
 
 
 int main(){
