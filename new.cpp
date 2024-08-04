@@ -1,3 +1,4 @@
+/*
 #include<iostream>
 #include<queue>
 using namespace std;
@@ -231,3 +232,30 @@ obj.option();
 return 0;
 }
 
+
+
+*/
+
+#include<iostream>
+#include<queue>
+using namespace std;
+
+struct node{
+int info;
+node *left,*right;
+};
+
+class list{
+private:
+node *root;
+public:
+
+
+};
+
+
+int main(){
+
+
+return  0;
+}
