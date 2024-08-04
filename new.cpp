@@ -270,11 +270,41 @@ deletion(root);
 
 
 void tree :: deletion(node *root){
-
+if(root!=NULL){
+deletion(root->left);
+deletion(root->right);
+delete root;
+ }
 }
 
+
+void tree :: insert(node *&root,int key){
+if(root==NULL){
+root=new node(key);
+root->left=NULL;
+root->right=NULL;
+return;
+}
+
+if(key==root){
+cout<<"Key is already avalible : "<<endl;
+return;
+}
+
+if(key<root->info){
+ insert(root->left,key);
+return;
+}
+else{
+insert(root->right,key);
+ }
+}
+
+
+
+
 int main(){
-
-
+tree obj;
+obj.option();
 return  0;
 }
