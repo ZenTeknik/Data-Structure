@@ -269,6 +269,40 @@ deletion(root);
 }
 
 
+
+void tree :: option(){
+int choice;
+int key;
+do{
+cout<<"Avalible option : "<<endl;
+cout<<"1)Insert : "<<endl;
+cout<<"2) Preorder :"<<endl;
+cout<<"3)Search :"<<endl;
+cout<<"Enter your choice : "<<endl;
+cin>>choice;
+
+if(choice==1){
+cout<<"Enter the key to insert : "<<endl;
+cin>>key;
+insert(root,key);
+}
+else if(choice==2){
+preorder(root);
+}
+else if(choice==3){
+cout<<"Enter the key to search : "<<endl;
+cin>>key1;
+search(root,key1);
+}
+else if(choice==0){
+break;
+}
+else{
+cout<<"Invalid Choice :"<<endl;
+}
+
+}while(choice!=0);
+
 void tree :: deletion(node *root){
 if(root!=NULL){
 deletion(root->left);
@@ -298,6 +332,27 @@ return;
 else{
 insert(root->right,key);
  }
+}
+
+
+node* tree :: search(node *root,int key1){
+
+if(root==NULL || key1==root->info){
+return root;
+}
+
+if(key1<root->info){
+return search(root->left,key1);
+}
+else{
+return search(root->right,key1);
+}
+}
+
+
+void tree :: preorder(node *root){
+
+
 }
 
 
