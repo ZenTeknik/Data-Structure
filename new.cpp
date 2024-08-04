@@ -243,16 +243,35 @@ using namespace std;
 struct node{
 int info;
 node *left,*right;
+node(int val) : info(val), left(NULL),right(NULL){};
 };
 
-class list{
+
+class tree{
 private:
 node *root;
 public:
-
-
+tree();
+~tree();
+void deletion(node *root);
+void insert(node *&root,int key);
+void preorder(node *root);
 };
 
+
+
+tree :: tree(){
+root=NULL;
+}
+
+tree :: ~tree(){
+deletion(root);
+}
+
+
+void tree :: deletion(node *root){
+
+}
 
 int main(){
 
