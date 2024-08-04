@@ -253,9 +253,11 @@ node *root;
 public:
 tree();
 ~tree();
+void option();
 void deletion(node *root);
 void insert(node *&root,int key);
 void preorder(node *root);
+bool search(node *root,int key1);
 };
 
 
@@ -273,11 +275,12 @@ deletion(root);
 void tree :: option(){
 int choice;
 int key;
+int key1;
 do{
 cout<<"Avalible option : "<<endl;
-cout<<"1)Insert : "<<endl;
+cout<<"1) Insert : "<<endl;
 cout<<"2) Preorder :"<<endl;
-cout<<"3)Search :"<<endl;
+cout<<"3) Search :"<<endl;
 cout<<"Enter your choice : "<<endl;
 cin>>choice;
 
@@ -292,7 +295,12 @@ preorder(root);
 else if(choice==3){
 cout<<"Enter the key to search : "<<endl;
 cin>>key1;
-search(root,key1);
+if(search(root,key1)){
+cout<<"Key found in tree : "<<endl;
+}
+else{
+cout<<"Key not found : "<<endl;
+}
 }
 else if(choice==0){
 break;
@@ -302,6 +310,8 @@ cout<<"Invalid Choice :"<<endl;
 }
 
 }while(choice!=0);
+}
+
 
 void tree :: deletion(node *root){
 if(root!=NULL){
@@ -320,7 +330,7 @@ root->right=NULL;
 return;
 }
 
-if(key==root){
+if(key==root->info){
 cout<<"Key is already avalible : "<<endl;
 return;
 }
@@ -335,7 +345,7 @@ insert(root->right,key);
 }
 
 
-node* tree :: search(node *root,int key1){
+*node tree :: search(node *root,int key1){
 
 if(root==NULL || key1==root->info){
 return root;
@@ -351,10 +361,18 @@ return search(root->right,key1);
 
 
 void tree :: preorder(node *root){
-
-
+if(root==NULL){
+cout<<"Root is empty : "<<endl;
+return;
 }
-
+cout<<root->info<<" ";
+if(root->left!=NULL){
+ preorder(root->left);
+}
+if(root->right!=NULL){
+preorder(root->right);
+}
+}
 
 
 
