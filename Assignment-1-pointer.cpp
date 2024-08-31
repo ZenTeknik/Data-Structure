@@ -246,5 +246,6 @@ ptr=newArr;
 size++;
 cout<<"Added value : "<<value<<endl;
 }
+.
 
 
