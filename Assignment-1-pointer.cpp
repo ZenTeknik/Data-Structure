@@ -1,4 +1,4 @@
-  /*
+/*
 #include<iostream>
 using namespace std;
 
@@ -246,6 +246,6 @@ ptr=newArr;
 size++;
 cout<<"Added value : "<<value<<endl;
 }
-
+.
 
 
