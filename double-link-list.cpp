@@ -155,6 +155,7 @@ cout<<"Empty list : "<<endl;
 return;
 }
 
+
 while(temp!=NULL){
 cout<<temp->info<<" ";
 temp=temp->next;
