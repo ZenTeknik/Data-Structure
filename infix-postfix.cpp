@@ -25,6 +25,7 @@ bool isEmpty();
 void push(char val);
 char pop();
 char peek();
+int evaluatePostfix(string postfix);
 };
 
 
@@ -161,19 +162,77 @@ else {
 
 
 
-// main function
-int main(){
-st obj;
+// function to evaluate the postfix 
+// function to evaluate the postfix 
+int st :: evaluatePostfix(string postfix){
+    st evaluate;
 
+int operand1;
+int operand2;
+int result;
+
+for(int i=0;i<postfix.length(); i++){
+char currentchar=postfix[i];
+
+if(isOperand(currentchar)){
+evaluate.push(currentchar-'0');  
+ }
+else{
+operand2=evaluate.pop();  
+operand1=evaluate.pop();  
+            
+          
+
+switch(currentchar){
+                case '+': 
+                    result = operand1 + operand2;
+                    evaluate.push(result); 
+               break;
+                case '-': 
+                    result = operand1 - operand2;
+                    evaluate.push(result); 
+                   break;
+                case '*': 
+                    result = operand1 * operand2;
+                    evaluate.push(result); 
+                   break;
+                case '/': 
+                    if(operand2 == 0) {   // if there is 0 in the operand then i will give as  the result zero 
+                        result=0;
+                    } else {
+                    result=operand1/operand2;
+                }
+evaluate.push(result);
+break;
+ default:
+                   // like invalid operater 
+result=0;
+      }
+  }
+}
+
+result=evaluate.pop();  // Final result
+ return result;
+}
+
+
+
+
+// main function
+int main() {
+st obj;
+int result=0;
 
 // string s="A+B*C-D";
 // string s="A+B*C-D";  test cases    
 //string s="(A+B)*(C/D)-E";   //test cases
-string s="(2+4)*6-4"; 
+string s="6+3*4"; 
 string postexp=obj.infixTopostfix(s);
+result=obj.evaluatePostfix(postexp);
+
 
 cout<<"Postfix expression : "<<postexp<<endl;
-
+cout<<"Result : "<<result<<endl;
 
 return 0;
 }
