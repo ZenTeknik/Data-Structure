@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #include<iostream>
-=======
-.#include<iostream>
->>>>>>> origin/main
 using namespace std;
 
 
@@ -90,7 +86,15 @@ return *this;
 
 
 
-// function for the option 
+
+
+
+
+
+
+
+
+
 void  list :: option() {
     int choice, pos, val,key;
     do {
@@ -247,23 +251,23 @@ void   list :: remove( int key) {
         return;
     }
 
-    for (int i=pos;i<currentSize-1;i++) {
-        arr[i]=arr[i+1];
+    for (int i = pos; i < currentSize - 1; i++) {
+        arr[i] = arr[i + 1];
     }
 
     currentSize--;
 
-    cout<<"Array after removing the element: " << endl;
-    for (int i=0;i<currentSize;i++) {
-        cout<<arr[i]<< " ";
+    cout << "Array after removing the element: " << endl;
+    for (int i = 0; i < currentSize; i++) {
+        cout << arr[i] << " ";
     }
-    cout<<endl;
+    cout << endl;
 }
 
 
 // function for checking isFull or not
 bool   list :: isFull() {
-    return currentSize>=maxsize;
+    return currentSize >=maxsize;
     }
 
 
