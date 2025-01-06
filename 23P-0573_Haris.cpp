@@ -4,7 +4,7 @@
 .#include<iostream>
 >>>>>>> origin/main
 using namespace std;
-
+.............
 
 class list {
 private:
